@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - ProResume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2d4a8a;
+            --secondary: #d4af37;
+            --accent: #2563eb;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f6f9fc 0%, #f1f5f9 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: white;
+            padding: 25px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo i {
+            color: var(--secondary);
+            font-size: 2.2rem;
+        }
+        
+        .nav-controls {
+            display: flex;
+            gap: 15px;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 80px 0;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 50px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 60px;
+        }
+        
+        .last-updated {
+            background: var(--light);
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            font-weight: 500;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .policy-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .section-title i {
+            color: var(--secondary);
+        }
+        
+        .section-content {
+            color: var(--dark);
+        }
+        
+        .section-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .section-content ul, .section-content ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .section-content li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+        
+        .highlight-box {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .highlight-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-table th {
+            background: var(--primary);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .info-table td {
+            padding: 18px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .info-table tr:hover {
+            background: rgba(37, 99, 235, 0.05);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark);
+        }
+        
+        .contact-item i {
+            color: var(--accent);
+        }
+        
+        /* Buttons */
+        .btn {
+            padding: 16px 28px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(26, 54, 93, 0.2);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--dark);
+            border: 2px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            background: #f8fafc;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            border-radius: 30px 30px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(37, 99, 235, 0.3);
+            transition: var(--transition);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: var(--primary);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .main-content {
+                padding: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                padding: 30px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .info-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .main-content {
+                padding: 25px;
+            }
+            
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>ProResume Privacy</span>
+                </div>
+                <div class="nav-controls">
+                    <a href="index.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Resume Builder
+                    </a>
+                    <a href="support.html" class="btn btn-primary">
+                        <i class="fas fa-headset"></i> Help Center
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Privacy Policy</h1>
+                <p class="hero-description">
+                    Your privacy is our priority. Learn how ProResume protects your personal data and respects your rights.
+                </p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-primary" onclick="scrollToSection('dataCollection')">
+                        <i class="fas fa-database"></i> Data We Collect
+                    </button>
+                    <button class="btn btn-secondary" style="background: rgba(255,255,255,0.2); color: white; border: none;">
+                        <i class="fas fa-user-shield"></i> Your Rights
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Last Updated: December 1, 2023</span>
+            </div>
+
+            <!-- Introduction -->
+            <div class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-file-alt"></i> 1. Introduction
+                </h2>
+                <div class="section-content">
+                    <p>Welcome to ProResume ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our resume builder application.</p>
+                    
+                    <div class="highlight-box">
+                        <div class="highlight-title">
+                            <i class="fas fa-info-circle"></i>
+                            Important Note
+                        </div>
+                        <p>ProResume is designed with privacy as a core principle. Your resume data is processed locally in your browser and never leaves your device unless you explicitly choose to export it.</p>
+                    </div>
+                    
+                    <p>By using ProResume, you consent to the data practices described in this policy. If you do not agree with the terms of this Privacy Policy, please do not access the application.</p>
+                </div>
+            </div>
+
+            <!-- Information We Collect -->
+            <div class="policy-section" id="dataCollection">
+                <h2 class="section-title">
+                    <i class="fas fa-database"></i> 2. Information We Collect
+                </h2>
+                <div class="section-content">
+                    <h3 style="margin-bottom: 15px; color: var(--primary);">2.1 Personal Information</h3>
+                    <p>We collect information that you voluntarily provide when using ProResume:</p>
+                    <ul>
+                        <li><strong>Resume Content:</strong> Personal details, work experience, education, skills, and other information you enter into your resume</li>
+                        <li><strong>Contact Information:</strong> Name, email address, phone number, and location when provided</li>
+                        <li><strong>Account Information:</strong> If you create an account, we collect username and password</li>
+                        <li><strong>Communication Data:</strong> Information you provide when contacting our support team</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary);">2.2 Automatically Collected Information</h3>
+                    <p>When you use ProResume, we automatically collect:</p>
+                    <ul>
+                        <li><strong>Device Information:</strong> Browser type, operating system, device type</li>
+                        <li><strong>Usage Data:</strong> Pages visited, features used, time spent on the application</li>
+                        <li><strong>Technical Data:</strong> IP address, browser version, screen resolution</li>
+                        <li><strong>Cookies Data:</strong> Session cookies for functionality (see Cookie Policy below)</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary);">2.3 Local Storage</h3>
+                    <p>ProResume uses your browser's local storage to:</p>
+                    <ul>
+                        <li>Save your resume progress automatically</li>
+                        <li>Store your template preferences</li>
+                        <li>Remember your form data between sessions</li>
+                        <li>Save your settings and customizations</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <div class="highlight-title">
+                            <i class="fas fa-lock"></i>
+                            Key Privacy Feature
+                        </div>
+                        <p>Your resume data is stored locally in your browser using localStorage and sessionStorage. This means your personal information never leaves your device unless you explicitly export your resume as a PDF.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How We Use Your Information -->
+            <div class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-cogs"></i> 3. How We Use Your Information
+                </h2>
+                <div class="section-content">
+                    <p>We use the information we collect for the following purposes:</p>
+                    
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Purpose</th>
+                                <th>Information Used</th>
+                                <th>Legal Basis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>To provide resume building services</td>
+                                <td>Resume content, contact information</td>
+                                <td>Contractual necessity</td>
+                            </tr>
+                            <tr>
+                                <td>To save your progress automatically</td>
+                                <td>Resume data, preferences</td>
+                                <td>Legitimate interest</td>
+                            </tr>
+                            <tr>
+                                <td>To generate PDF documents</td>
+                                <td>All resume information</td>
+                                <td>Your consent</td>
+                            </tr>
+                            <tr>
+                                <td>To improve our application</td>
+                                <td>Usage data, technical information</td>
+                                <td>Legitimate interest</td>
+                            </tr>
+                            <tr>
+                                <td>To provide customer support</td>
+                                <td>Contact information, communication data</td>
+                                <td>Contractual necessity</td>
+                            </tr>
+                            <tr>
+                                <td>To send important updates</td>
+                                <td>Email address</td>
+                                <td>Legitimate interest</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p>We do not sell, rent, or trade your personal information to third parties for marketing purposes.</p>
+                </div>
+            </div>
+
+            <!-- Data Storage and Security -->
+            <div class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-shield-alt"></i> 4. Data Storage and Security
+                </h2>
+                <div class="section-content">
+                    <h3 style="margin-bottom: 15px; color: var(--primary);">4.1 Where Your Data is Stored</h3>
+                    <p>All resume data is stored locally in your browser using:</p>
+                    <ul>
+                        <li><strong>localStorage:</strong> Persistent storage that remains until you clear browser data</li>
+                        <li><strong>sessionStorage:</strong> Temporary storage that clears when you close the browser</li>
+                        <li><strong>IndexedDB:</strong> For larger resume files and attachments (if applicable)</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary);">4.2 Security Measures</h3>
+                    <p>We implement appropriate technical and organizational security measures:</p>
+                    <ul>
+                        <li>HTTPS encryption for all data transmission</li>
+                        <li>Same-origin policy enforcement</li>
+                        <li>Regular security assessments</li>
+                        <li>Secure coding practices</li>
+                        <li>Access controls and authentication</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary);">4.3 Data Retention</h3>
+                    <p>We retain your information only for as long as necessary:</p>
+                    <ul>
+                        <li><strong>Resume Data:</strong> Stored locally in your browser until you clear it</li>
+                        <li><strong>Account Data:</strong> Until you delete your account (if applicable)</li>
+                        <li><strong>Support Communications:</strong> 2 years from last contact</li>
+                        <li><strong>Analytics Data:</strong> 26 months from collection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Your Privacy Rights -->
+            <div class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-user-check"></i> 5. Your Privacy Rights
+                </h2>
+                <div class="section-content">
+                    <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+                    
+                    <div class="highlight-box">
+                        <div class="highlight-title">
+                            <i class="fas fa-gavel"></i>
+                            Your Rights Under GDPR, CCPA, and Other Regulations
+                        </div>
+                        <p>Even though ProResume stores data locally, we respect global privacy standards and provide you with control over your information.</p>
+                    </div>
+                    
+                    <h3 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary);">5.1 Your Rights Include:</h3>
+                    <ul>
+                        <li><strong>Right to Access:</strong> Request a copy of your personal data</li>
+                        <li><strong>Right to Rectification:</strong> Correct inaccurate or incomplete data</li>
+                        <li><strong>Right to Erasure:</strong> Request deletion of your data (right to be forgotten)</li>
+                        <li><strong>Right to Restrict Processing:</strong> Limit how we use your data</li>
+                        <li><strong>Right to Data Portability:</strong> Receive your data in a structured format</li>
+                        <li><strong>Right to Object:</strong> Object to certain types of processing</li>
+                        <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary);">5.2 How to Exercise Your Rights</h3>
+                    <p>To exercise any of these rights, you can:</p>
+                    <ol>
+                        <li>Clear your browser data to remove locally stored resume information</li>
+                        <li>Use the "Reset Form" feature in the application</li>
+                        <li>Contact us at <strong>privacy@proresume.com</strong></li>
+                        <li>Use the "Delete Account" feature if you have created an account</li>
+                    </ol>
+                    
+                    <p>We will respond to your request within 30 days and will not charge you for exercising your rights.</p>
+                </div>
+            </div>
+
+            <!-- Third-Party Services -->
+            <div class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-external-link-alt"></i> 6. Third-Party Services
+                </h2>
+                <div class="section-content">
+                    <p>ProResume may use third-party services for specific functionalities:</p>
+                    
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Purpose</th>
+                                <th>Data Shared</th>
+                                <th>Privacy Policy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Font Awesome</td>
+                                <td>Icons and graphics</td>
+                                <td>None (CDN service)</td>
+                                <td><a href="https://fontawesome.com/privacy" target="_blank">View Policy</a></td>
+                            </tr>
+                            <tr>
+                                <td>Google Fonts</td>
+                                <td>Typography</td>
+                                <td>IP address (anonymous)</td>
+                                <td><a href="https://policies.google.com/privacy" target="_blank">View Policy</a></td>
+                            </tr>
+                            <tr>
+                                <td>jsPDF Library</td>
+                                <td>PDF generation</td>
+                                <td>Resume data (local processing)</td>
+                                <td><a href="https://raw.githack.com/MrRio/jsPDF/master/LICENSE" target="_blank">View License</a></td>
+                            </tr>
+                            <tr>
+                                <td>html2canvas</td>
+                                <td>HTML to image conversion</td>
+                                <td>Resume data (local processing)</td>
+                                <td><a href="https://html2canvas.hertzen.com/" target="_blank">View Information</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p>We carefully select third-party service providers and ensure they comply with applicable privacy laws. However, we are not responsible for the privacy practices of these third parties.</p>
+                </div>
+            </div>
+
+            <!-- Cookies and Tracking -->
+            <div class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-cookie-bite"></i> 7. Cookies and Tracking Technologies
+                </h2>
+                <div class="section-content">
+                    <p>ProResume uses minimal cookies and tracking technologies:</p>
+                    
+                    <h3 style="margin-bottom: 15px; color: var(--primary);">7.1 Essential Cookies</h3>
+                    <ul>
+                        <li><strong>Session Cookies:</strong> Necessary for application functionality</li>
+                        <li><strong>Preference Cookies:</strong> Remember your settings and choices</li>
+                        <li><strong>Security Cookies:</strong> Support security features</li>
+                    </ul>
+                    
+                    <h3 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary);">7.2 How to Control Cookies</h3>
+                    <p>You can control cookies through your browser settings:</p>
+                    <ul>
+                        <li><strong>Chrome:</strong> Settings > Privacy and security > Cookies and other site data</li>
+                        <li><strong>Firefox:</strong> Options > Privacy & Security > Cookies and Site Data</li>
+                        <li><strong>Safari:</strong> Preferences > Privacy > Cookies and website data</li>
+                        <li><strong>Edge:</strong> Settings > Cookies and site permissions > Cookies and data stored</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <div class="highlight-title">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Important Note
+                        </div>
+                        <p>Disabling essential cookies may affect ProResume's functionality, including the ability to save your progress and remember your preferences.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Children's Privacy -->
+            <div class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-child"></i> 8. Children's Privacy
+                </h2>
+                <div class="section-content">
+                    <p>ProResume is not intended for children under the age of 16. We do not knowingly collect personal information from children under 16. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately.</p>
+                    
+                    <p>If we learn that we have collected personal information from a child under 16, we will delete that information as quickly as possible.</p>
+                </div>
+            </div>
+
+            <!-- International Data Transfers -->
+            <div class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-globe"></i> 9. International Data Transfers
+                </h2>
+                <div class="section-content">
+                    <p>Since ProResume processes data locally in your browser, no international data transfers occur for your resume information.</p>
+                    
+                    <p>However, if you contact our support team or use certain third-party services, your data may be transferred to and processed in countries outside of your country of residence. We ensure appropriate safeguards are in place for such transfers.</p>
+                </div>
+            </div>
+
+            <!-- Changes to This Policy -->
+            <div class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-history"></i> 10. Changes to This Privacy Policy
+                </h2>
+                <div class="section-content">
+                    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+                    <ul>
+                        <li>Posting the new Privacy Policy on this page</li>
+                        <li>Updating the "Last Updated" date at the top of this policy</li>
+                        <li>Displaying a notification in the application for significant changes</li>
+                        <li>Sending an email to registered users (if applicable)</li>
+                    </ul>
+                    
+                    <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="policy-section">
+                <h2 class="section-title">
+                    <i class="fas fa-envelope"></i> 11. Contact Us
+                </h2>
+                <div class="section-content">
+                    <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
+                    
+                    <div class="contact-section">
+                        <h3 class="contact-title">ProResume Privacy Team</h3>
+                        <p style="margin-bottom: 20px; color: var(--gray);">
+                            We're committed to protecting your privacy and will respond to your inquiries promptly.
+                        </p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email: privacy@proresume.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>Phone: +1 (555) 123-4567</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Address: 123 Privacy Street, Data City, DC 12345</span>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px;">
+                            <a href="support.html" class="btn btn-primary">
+                                <i class="fas fa-headset"></i> Contact Support Center
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ProResume Privacy</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">
+                        Your privacy is protected. Your data stays with you.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Resume Builder</a></li>
+                        <li><a href="support.html">Help Center</a></li>
+                        <li><a href="#dataCollection">Data Collection</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal Documents</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" style="color: var(--secondary);">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Your Rights</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Access Your Data</a></li>
+                        <li><a href="#">Request Deletion</a></li>
+                        <li><a href="#">Opt-Out</a></li>
+                        <li><a href="#">File a Complaint</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 ProResume. All rights reserved. | Protecting your privacy since 2023</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">
+                    This document was last updated on December 1, 2023
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Back to Top functionality
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for section links
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const headerOffset = 100;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Print-friendly version
+        function printPolicy() {
+            window.print();
+        }
+        
+        // Accept cookies (simulated)
+        function acceptCookies() {
+            localStorage.setItem('proresume_cookies_accepted', 'true');
+            document.getElementById('cookieBanner')?.remove();
+        }
+        
+        // Check if cookies are accepted
+        if (!localStorage.getItem('proresume_cookies_accepted')) {
+            // You could add a cookie banner here if needed
+        }
+        
+        // Initialize
+        console.log('Privacy Policy loaded. Last updated: December 1, 2023');
+    </script>
+</body>
+</html>

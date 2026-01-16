@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProResume Help Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2d4a8a;
+            --secondary: #d4af37;
+            --accent: #2563eb;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f6f9fc 0%, #f1f5f9 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: white;
+            padding: 25px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo i {
+            color: var(--secondary);
+            font-size: 2.2rem;
+        }
+        
+        .nav-controls {
+            display: flex;
+            gap: 15px;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 80px 0;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            padding: 40px 0;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            border-radius: 12px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .sidebar-nav a:hover {
+            background: var(--light);
+            color: var(--accent);
+        }
+        
+        .sidebar-nav a.active {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .sidebar-nav a.active i {
+            color: white;
+        }
+        
+        /* Help Categories */
+        .help-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .category-1 .category-icon {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent);
+        }
+        
+        .category-2 .category-icon {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+        
+        .category-3 .category-icon {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+        }
+        
+        .category-4 .category-icon {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+        }
+        
+        .category-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .category-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        /* Complaint Form */
+        .complaint-form-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--secondary);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: white;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        /* Progress Steps */
+        .progress-steps {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--border);
+            z-index: 1;
+        }
+        
+        .progress-bar {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            z-index: 2;
+            transition: var(--transition);
+        }
+        
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--gray);
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+        
+        .step.active .step-number {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: white;
+        }
+        
+        .step.completed .step-number {
+            border-color: var(--success);
+            background: var(--success);
+            color: white;
+        }
+        
+        .step-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray);
+        }
+        
+        .step.active .step-label {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .step.completed .step-label {
+            color: var(--success);
+        }
+        
+        /* Form Sections */
+        .form-section {
+            display: none;
+        }
+        
+        .form-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Checkbox Group */
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .checkbox-item:hover {
+            border-color: var(--accent);
+            background: rgba(37, 99, 235, 0.05);
+        }
+        
+        .checkbox-item input {
+            width: auto;
+            margin: 0;
+        }
+        
+        /* Buttons */
+        .btn {
+            padding: 16px 28px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(26, 54, 93, 0.2);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--dark);
+            border: 2px solid var(--border);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            background: #f8fafc;
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, var(--success) 0%, #0da271 100%);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+        }
+        
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 50px;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 25px 0;
+        }
+        
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-top: 0;
+        }
+        
+        .faq-answer.show {
+            max-height: 500px;
+            margin-top: 15px;
+        }
+        
+        .faq-toggle {
+            color: var(--accent);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        
+        /* Contact Cards */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin: 0 auto 20px;
+        }
+        
+        .contact-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .contact-details {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 20px 30px;
+            background: white;
+            color: var(--dark);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateX(100px);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1001;
+            border-left: 4px solid var(--success);
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            border-radius: 30px 30px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .progress-steps {
+                flex-direction: column;
+                gap: 30px;
+                align-items: flex-start;
+            }
+            
+            .progress-steps::before {
+                display: none;
+            }
+            
+            .progress-bar {
+                display: none;
+            }
+            
+            .step {
+                flex-direction: row;
+                gap: 15px;
+                width: 100%;
+            }
+            
+            .step-number {
+                margin-bottom: 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .complaint-form-container, .faq-section {
+                padding: 25px;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-headset"></i>
+                    <span>ProResume Help Center</span>
+                </div>
+                <div class="nav-controls">
+                    <a href="index.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Resume Builder
+                    </a>
+                    <button class="btn btn-accent" id="emergencyBtn">
+                        <i class="fas fa-phone-alt"></i> Emergency Support
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">How Can We Help You Today?</h1>
+            <p class="hero-description">
+                Get instant help with your resume building process. Submit a complaint, browse FAQs, or contact our support team directly.
+            </p>
+            <div class="action-buttons" style="justify-content: center;">
+                <button class="btn btn-accent" id="startComplaintBtn">
+                    <i class="fas fa-comment-medical"></i> Submit Complaint
+                </button>
+                <button class="btn btn-secondary" style="background: rgba(255,255,255,0.2); color: white; border: none;">
+                    <i class="fas fa-question-circle"></i> Browse FAQs
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="main-layout">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar">
+                <h2 class="sidebar-title">
+                    <i class="fas fa-compass"></i> Quick Navigation
+                </h2>
+                <ul class="sidebar-nav">
+                    <li><a href="#faq" class="active">
+                        <i class="fas fa-question-circle"></i>
+                        <span>FAQs</span>
+                    </a></li>
+                    <li><a href="#contact">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Contact Us</span>
+                    </a></li>
+                    <li><a href="#complaint">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Submit Complaint</span>
+                    </a></li>
+                    <li><a href="#guides">
+                        <i class="fas fa-book"></i>
+                        <span>User Guides</span>
+                    </a></li>
+                    <li><a href="#status">
+                        <i class="fas fa-tasks"></i>
+                        <span>Check Status</span>
+                    </a></li>
+                </ul>
+                
+                <div style="margin-top: 30px; padding: 20px; background: var(--light); border-radius: 12px;">
+                    <h3 style="font-size: 1rem; margin-bottom: 10px; color: var(--primary);">
+                        <i class="fas fa-bolt"></i> Quick Support
+                    </h3>
+                    <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 15px;">
+                        Need immediate help? Chat with our support team.
+                    </p>
+                    <button class="btn btn-whatsapp" style="width: 100%; padding: 12px;">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Support
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main>
+                <!-- Help Categories -->
+                <div class="help-categories">
+                    <div class="category-card category-1" data-category="technical">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="category-title">Technical Issues</h3>
+                        <p class="category-description">Problems with templates, PDF generation, or website functionality</p>
+                        <button class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+                            Get Help <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="category-card category-2" data-category="account">
+                        <div class="category-icon">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <h3 class="category-title">Account & Billing</h3>
+                        <p class="category-description">Issues with login, account settings, or payment problems</p>
+                        <button class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+                            Get Help <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="category-card category-3" data-category="content">
+                        <div class="category-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3 class="category-title">Resume Content</h3>
+                        <p class="category-description">Help with formatting, content suggestions, or template selection</p>
+                        <button class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+                            Get Help <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="category-card category-4" data-category="other">
+                        <div class="category-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="category-title">Other Issues</h3>
+                        <p class="category-description">Any other problems or feedback you'd like to share with us</p>
+                        <button class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+                            Get Help <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Complaint Form -->
+                <div class="complaint-form-container" id="complaintForm">
+                    <h2 class="section-title">
+                        <i class="fas fa-comment-medical"></i> Submit Your Complaint
+                    </h2>
+                    <p style="color: var(--gray); margin-bottom: 30px;">
+                        Please provide details about your issue. Our team will contact you within 24 hours.
+                    </p>
+                    
+                    <!-- Progress Steps -->
+                    <div class="progress-steps">
+                        <div class="progress-bar" id="progressBar"></div>
+                        <div class="step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Issue Type</div>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-label">Details</div>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Contact Info</div>
+                        </div>
+                        <div class="step" data-step="4">
+                            <div class="step-number">4</div>
+                            <div class="step-label">Review & Submit</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 1: Issue Type -->
+                    <div class="form-section active" id="step1">
+                        <h3 style="margin-bottom: 20px; color: var(--primary);">What type of issue are you facing?</h3>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="issueType" value="technical">
+                                <div>
+                                    <strong>Technical Problem</strong>
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-top: 5px;">
+                                        Website not working, errors, bugs
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="issueType" value="template">
+                                <div>
+                                    <strong>Template Issue</strong>
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-top: 5px;">
+                                        Template not loading or formatting issues
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="issueType" value="download">
+                                <div>
+                                    <strong>Download Problem</strong>
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-top: 5px;">
+                                        Can't download PDF or wrong format
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="issueType" value="account">
+                                <div>
+                                    <strong>Account Issue</strong>
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-top: 5px;">
+                                        Login problems or account settings
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="issueType" value="content">
+                                <div>
+                                    <strong>Content Help</strong>
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-top: 5px;">
+                                        Need help with resume content
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="issueType" value="other">
+                                <div>
+                                    <strong>Other Issue</strong>
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-top: 5px;">
+                                        Something else not listed here
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary" id="nextStep1">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Details -->
+                    <div class="form-section" id="step2">
+                        <h3 style="margin-bottom: 20px; color: var(--primary);">Please describe your issue in detail</h3>
+                        
+                        <div class="form-group">
+                            <label>Title of Your Complaint *</label>
+                            <input type="text" id="complaintTitle" placeholder="e.g., Cannot download my resume as PDF">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Detailed Description *</label>
+                            <textarea id="complaintDescription" placeholder="Please describe your issue in detail. Include steps to reproduce the problem, error messages, and what you expected to happen."></textarea>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>When did this issue start? *</label>
+                                <input type="date" id="issueDate">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Severity Level</label>
+                                <select id="severityLevel">
+                                    <option value="low">Low - Minor inconvenience</option>
+                                    <option value="medium" selected>Medium - Affects functionality</option>
+                                    <option value="high">High - Cannot use the service</option>
+                                    <option value="critical">Critical - Urgent attention needed</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Upload Screenshots (Optional)</label>
+                            <input type="file" id="screenshots" accept="image/*" multiple>
+                            <p style="font-size: 0.85rem; color: var(--gray); margin-top: 5px;">
+                                You can upload up to 5 screenshots. Max 5MB each.
+                            </p>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary" id="prevStep2">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button class="btn btn-accent" id="nextStep2">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Contact Information -->
+                    <div class="form-section" id="step3">
+                        <h3 style="margin-bottom: 20px; color: var(--primary);">How can we contact you?</h3>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" id="contactName" placeholder="Your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Email Address *</label>
+                                <input type="email" id="contactEmail" placeholder="you@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" id="contactPhone" placeholder="+91 9876543210">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Preferred Contact Method</label>
+                                <select id="contactMethod">
+                                    <option value="email">Email</option>
+                                    <option value="phone">Phone Call</option>
+                                    <option value="whatsapp">WhatsApp</option>
+                                    <option value="any">Any Method</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Additional Notes (Optional)</label>
+                            <textarea id="additionalNotes" placeholder="Any additional information that might help us resolve your issue faster"></textarea>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary" id="prevStep3">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button class="btn btn-accent" id="nextStep3">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Review & Submit -->
+                    <div class="form-section" id="step4">
+                        <h3 style="margin-bottom: 20px; color: var(--primary);">Review Your Complaint</h3>
+                        
+                        <div class="form-group">
+                            <div style="background: var(--light); padding: 25px; border-radius: 12px; margin-bottom: 20px;">
+                                <h4 style="margin-bottom: 15px; color: var(--primary);">Summary</h4>
+                                <div id="reviewSummary">
+                                    <!-- Summary will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="agreeTerms">
+                                I agree to share my information with ProResume support team for resolving this issue
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="agreeUpdates">
+                                I'd like to receive updates about my complaint status
+                            </label>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary" id="prevStep4">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button class="btn btn-success" id="submitComplaintBtn" disabled>
+                                <i class="fas fa-paper-plane"></i> Submit Complaint & Proceed to WhatsApp
+                            </button>
+                        </div>
+                        
+                        <div style="margin-top: 30px; padding: 20px; background: #E3F2FD; border-radius: 12px; border-left: 4px solid var(--accent);">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">
+                                <i class="fas fa-info-circle"></i> What happens next?
+                            </h4>
+                            <ol style="padding-left: 20px; color: var(--gray);">
+                                <li>Your complaint will be submitted and assigned a ticket number</li>
+                                <li>You'll be redirected to WhatsApp to chat with our support agent</li>
+                                <li>Our team will review your issue within 24 hours</li>
+                                <li>We'll contact you via your preferred method with updates</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section" id="faq">
+                    <h2 class="section-title">
+                        <i class="fas fa-question-circle"></i> Frequently Asked Questions
+                    </h2>
+                    
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <span>How do I download my resume as PDF?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer show">
+                            <p>To download your resume as PDF:</p>
+                            <ol>
+                                <li>Complete your resume in the resume builder</li>
+                                <li>Click the "Download PDF" button in the preview section</li>
+                                <li>Wait for the PDF generation to complete (usually takes 10-30 seconds)</li>
+                                <li>Save the PDF file to your device</li>
+                            </ol>
+                            <p>If you're having issues, try using a different browser or check your internet connection.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>My template isn't loading properly. What should I do?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If your template isn't loading:</p>
+                            <ul>
+                                <li>Refresh the page (Ctrl + F5 for hard refresh)</li>
+                                <li>Clear your browser cache</li>
+                                <li>Try using a different browser (Chrome works best)</li>
+                                <li>Check your internet connection</li>
+                                <li>Make sure JavaScript is enabled in your browser</li>
+                            </ul>
+                            <p>If the problem persists, please submit a complaint using the form above.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I save my progress and continue later?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! ProResume automatically saves your progress in your browser's local storage. You can also manually save your progress by clicking the "Save Progress" button in the top right corner.</p>
+                            <p>To continue later, simply return to the website from the same browser and device, and your work will be automatically loaded.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How long does support take to respond?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our typical response times are:</p>
+                            <ul>
+                                <li><strong>Urgent issues:</strong> Within 2 hours</li>
+                                <li><strong>High priority:</strong> Within 6 hours</li>
+                                <li><strong>Normal issues:</strong> Within 24 hours</li>
+                                <li><strong>Feature requests:</strong> Within 48 hours</li>
+                            </ul>
+                            <p>You'll receive updates via email or WhatsApp based on your preferred contact method.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is my data safe and private?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, your data is completely private and secure:</p>
+                            <ul>
+                                <li>All data is stored locally in your browser</li>
+                                <li>We don't store your resume data on our servers</li>
+                                <li>No personal information is shared with third parties</li>
+                                <li>PDFs are generated locally in your browser</li>
+                                <li>We use HTTPS encryption for all communications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="contact-cards" id="contact"></div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="contact-title">WhatsApp</h3>
+                        <p class="contact-details">24/7 Support via WhatsApp</p>
+                        <button class="btn btn-whatsapp" id="whatsappBtn">
+                            <i class="fab fa-whatsapp"></i> Chat Now
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ProResume Help</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">
+                        We're here to help you create the perfect resume. Contact us anytime for support.
+                    </p>
+                </div>
+                
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 ProResume Help Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle" style="color: var(--success);"></i>
+        <span id="toastMessage">Complaint submitted successfully!</span>
+    </div>
+
+    <script>
+        // Current step tracking
+        let currentStep = 1;
+        let complaintData = {};
+        const whatsappNumber = "919597339180"; // Your WhatsApp number
+
+        // DOM Elements
+        const steps = document.querySelectorAll('.step');
+        const formSections = document.querySelectorAll('.form-section');
+        const progressBar = document.getElementById('progressBar');
+        const submitBtn = document.getElementById('submitComplaintBtn');
+        const agreeTerms = document.getElementById('agreeTerms');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+
+        // Initialize progress bar
+        function updateProgressBar() {
+            const percentage = ((currentStep - 1) / 3) * 100;
+            progressBar.style.width = `${percentage}%`;
+        }
+
+        // Update step display
+        function updateSteps() {
+            steps.forEach(step => {
+                const stepNum = parseInt(step.dataset.step);
+                
+                step.classList.remove('active', 'completed');
+                
+                if (stepNum === currentStep) {
+                    step.classList.add('active');
+                } else if (stepNum < currentStep) {
+                    step.classList.add('completed');
+                }
+            });
+            
+            formSections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.getElementById(`step${currentStep}`).classList.add('active');
+            updateProgressBar();
+            
+            // Scroll to top of form
+            document.getElementById('complaintForm').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Validate step 1
+        function validateStep1() {
+            const selectedIssues = document.querySelectorAll('input[name="issueType"]:checked');
+            return selectedIssues.length > 0;
+        }
+
+        // Validate step 2
+        function validateStep2() {
+            const title = document.getElementById('complaintTitle').value.trim();
+            const description = document.getElementById('complaintDescription').value.trim();
+            const date = document.getElementById('issueDate').value;
+            
+            return title.length > 5 && description.length > 20 && date !== '';
+        }
+
+        // Validate step 3
+        function validateStep3() {
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            return name.length > 2 && emailRegex.test(email);
+        }
+
+        // Collect complaint data
+        function collectComplaintData() {
+            // Step 1 data
+            const issueTypes = Array.from(document.querySelectorAll('input[name="issueType"]:checked'))
+                .map(input => input.value);
+            
+            // Step 2 data
+            const title = document.getElementById('complaintTitle').value;
+            const description = document.getElementById('complaintDescription').value;
+            const date = document.getElementById('issueDate').value;
+            const severity = document.getElementById('severityLevel').value;
+            
+            // Step 3 data
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const phone = document.getElementById('contactPhone').value;
+            const contactMethod = document.getElementById('contactMethod').value;
+            const notes = document.getElementById('additionalNotes').value;
+            
+            complaintData = {
+                issueTypes,
+                title,
+                description,
+                date,
+                severity,
+                name,
+                email,
+                phone,
+                contactMethod,
+                notes,
+                timestamp: new Date().toISOString(),
+                ticketId: 'PR' + Date.now()
+            };
+            
+            updateReviewSummary();
+        }
+
+        // Update review summary
+        function updateReviewSummary() {
+            const summaryDiv = document.getElementById('reviewSummary');
+            
+            let html = `
+                <div style="margin-bottom: 15px;">
+                    <strong>Ticket ID:</strong> ${complaintData.ticketId}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Issue Types:</strong> ${complaintData.issueTypes.join(', ')}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Title:</strong> ${complaintData.title}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Severity:</strong> ${complaintData.severity}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Contact:</strong> ${complaintData.name} (${complaintData.email})
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Preferred Contact:</strong> ${complaintData.contactMethod}
+                </div>
+            `;
+            
+            summaryDiv.innerHTML = html;
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'success') {
+            toastMessage.textContent = message;
+            
+            // Update border color based on type
+            if (type === 'error') {
+                toast.style.borderLeftColor = 'var(--danger)';
+            } else if (type === 'warning') {
+                toast.style.borderLeftColor = 'var(--warning)';
+            } else {
+                toast.style.borderLeftColor = 'var(--success)';
+            }
+            
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 5000);
+        }
+
+        // Redirect to WhatsApp
+        function redirectToWhatsApp() {
+            // Create WhatsApp message
+            const message = `*ProResume Support Request - Ticket ${complaintData.ticketId}*
+            
+*Name:* ${complaintData.name}
+*Email:* ${complaintData.email}
+*Phone:* ${complaintData.phone || 'Not provided'}
+*Issue Types:* ${complaintData.issueTypes.join(', ')}
+*Severity:* ${complaintData.severity}
+*Description:* ${complaintData.description}
+
+*Preferred Contact:* ${complaintData.contactMethod}
+*Additional Notes:* ${complaintData.notes || 'None'}`;
+
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Show success message
+            showToast(`Redirecting to WhatsApp... Ticket ${complaintData.ticketId} created`);
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                resetForm();
+            }, 3000);
+        }
+
+        // Reset form
+        function resetForm() {
+            // Reset all form fields
+            document.querySelectorAll('input, textarea, select').forEach(element => {
+                if (element.type === 'checkbox' || element.type === 'radio') {
+                    element.checked = false;
+                } else {
+                    element.value = '';
+                }
+            });
+            
+            // Reset to step 1
+            currentStep = 1;
+            updateSteps();
+            complaintData = {};
+            
+            // Uncheck agreement
+            agreeTerms.checked = false;
+            submitBtn.disabled = true;
+            
+            // Show success message
+            showToast('Your complaint has been submitted. Our team will contact you soon.');
+        }
+
+        // FAQ toggle functionality
+        function setupFAQ() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const toggle = item.querySelector('.faq-toggle');
+                
+                question.addEventListener('click', () => {
+                    // Close all other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').classList.remove('show');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    answer.classList.toggle('show');
+                });
+            });
+        }
+
+        // Sidebar navigation
+        function setupSidebarNav() {
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    link.classList.add('active');
+                    
+                    // Get target section
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Event Listeners
+        document.getElementById('nextStep1').addEventListener('click', () => {
+            if (validateStep1()) {
+                currentStep = 2;
+                updateSteps();
+            } else {
+                showToast('Please select at least one issue type', 'warning');
+            }
+        });
+
+        document.getElementById('nextStep2').addEventListener('click', () => {
+            if (validateStep2()) {
+                currentStep = 3;
+                updateSteps();
+            } else {
+                showToast('Please fill all required fields in step 2', 'warning');
+            }
+        });
+
+        document.getElementById('nextStep3').addEventListener('click', () => {
+            if (validateStep3()) {
+                collectComplaintData();
+                currentStep = 4;
+                updateSteps();
+            } else {
+                showToast('Please provide valid name and email address', 'warning');
+            }
+        });
+
+        document.getElementById('prevStep2').addEventListener('click', () => {
+            currentStep = 1;
+            updateSteps();
+        });
+
+        document.getElementById('prevStep3').addEventListener('click', () => {
+            currentStep = 2;
+            updateSteps();
+        });
+
+        document.getElementById('prevStep4').addEventListener('click', () => {
+            currentStep = 3;
+            updateSteps();
+        });
+
+        // Enable/disable submit button based on terms agreement
+        agreeTerms.addEventListener('change', () => {
+            submitBtn.disabled = !agreeTerms.checked;
+        });
+
+        // Submit complaint and redirect to WhatsApp
+        submitBtn.addEventListener('click', () => {
+            if (agreeTerms.checked) {
+                // Save complaint to localStorage (simulating backend)
+                const complaints = JSON.parse(localStorage.getItem('proresumeComplaints') || '[]');
+                complaints.push(complaintData);
+                localStorage.setItem('proresumeComplaints', JSON.stringify(complaints));
+                
+                // Redirect to WhatsApp
+                redirectToWhatsApp();
+            }
+        });
+
+        // WhatsApp button
+        document.getElementById('whatsappBtn').addEventListener('click', () => {
+            const message = encodeURIComponent("Hello! I need help with ProResume.");
+            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+        });
+
+        // Emergency support button
+        document.getElementById('emergencyBtn').addEventListener('click', () => {
+            window.location.href = `tel:+91${whatsappNumber}`;
+        });
+
+        // Start complaint button
+        document.getElementById('startComplaintBtn').addEventListener('click', () => {
+            document.getElementById('complaintForm').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+
+        // Help category cards
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const category = card.dataset.category;
+                document.getElementById('complaintForm').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Auto-select the corresponding checkbox
+                const checkbox = document.querySelector(`input[name="issueType"][value="${category}"]`);
+                if (checkbox) {
+                    checkbox.checked = true;
+                }
+                
+                // Move to step 1 if not already there
+                if (currentStep !== 1) {
+                    currentStep = 1;
+                    updateSteps();
+                }
+            });
+        });
+
+        // Initialize
+        updateProgressBar();
+        setupFAQ();
+        setupSidebarNav();
+        
+        // Show welcome message
+        setTimeout(() => {
+            showToast('Welcome to ProResume Help Center! How can we assist you today?');
+        }, 1000);
+    </script>
+</body>
+</html>
